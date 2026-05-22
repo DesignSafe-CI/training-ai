@@ -1,0 +1,4 @@
+Pygments
+jupyter-book<2
+matplotlib
+numpy
