@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# Requirements for the CLIPSeg-debris on DesignSafe demo.
+# On DesignSafe JupyterHub most of these are preinstalled; the notebook installs
+# any that are missing. For a local run, `pip install -r requirements.txt`.
+# ---------------------------------------------------------------------------
+
+# --- Deep learning (CLIPSeg-debris) ---
+torch>=2.0
+torchvision
+openai-clip            # provides the `clip` module (CLIPSeg ViT-B/16 backbone)
+safetensors            # to load clipseg_debris.safetensors
+
+# --- Geospatial (grid + NOAA ERI + mosaics) ---
+rasterio>=1.3
+geopandas>=0.13
+shapely>=2.0
+pyproj>=3.4
+contextily             # aerial/web basemaps for the regional figures
+
+# --- Scientific / I/O / viz ---
+numpy
+pandas
+matplotlib
+pillow
+tqdm
+requests
+
+# --- DesignSafe API ---
+dapi                   # auth, files, apps/systems, HPC job submission

@@ -1,4 +1,28 @@
+# --- Jupyter Book / OS / editor (from the template) ---
 *.DS_Store*
 *#*
 *~*
 **/*_build*
+_build/
+
+# --- Python / Jupyter ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# --- Runtime artifacts created when the notebook runs (regenerated anywhere) ---
+/experiments/
+/CLIPSeg-debris/
+.clip_cache/
+# Model weights are downloaded at runtime (Hugging Face / DAPI); keep only the docs.
+/weights/*
+!/weights/README.md
+*.ckpt
+*.safetensors
+*.pt
+*.bin
+
+# --- Local-only test tooling (NOT part of the shareable book) ---
+# DAPI test harness (holds a live token + .env credentials) and the unit tests.
+/dapi_session/
+/tests/

@@ -1,33 +1,24 @@
-# Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Book settings — https://jupyterbook.org/customize/config.html
 
-title: Training Template
-author: Author Name
+title: NHERI Computational Symposium AI Training
+author: Krishna Kumar, Kooshan Amini, and Jamie Ellen Padgett
 logo: logo.png
-copyright: "2024"
+copyright: "2026"
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Render the notebooks' SAVED outputs — do not re-execute on build (the demo needs a
+# DesignSafe session, DAPI, and a GPU, which the CI runner doesn't have).
 execute:
   execute_notebooks: "off"
 
-# Add a bibtex file so that we can create citations
-
-
 launch_buttons:
   notebook_interface: "jupyterlab"
-  colab_url: "https://colab.research.google.com"
-  
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/DesignSafe-CI/training-template # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# Where the book lives on the web (for the repository / issue buttons).
+repository:
+  url: https://github.com/DesignSafe-CI/training-ai
+  branch: main
+
 html:
   use_issues_button: true
   use_repository_button: true
   extra_navbar: ""
-  google_analytics_id: G-XXXXXXXXXX
