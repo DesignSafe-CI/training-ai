@@ -4,4 +4,4 @@
 format: jb-book
 root: README
 chapters:
-  - file: 02-clip
+  - file: CLIPSeg_debris_DesignSafe_NHERI2026
