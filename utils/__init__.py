@@ -15,6 +15,18 @@ official repository (DesignSafe PRJ-6225 / github.com/Way-Yuhao/CLIPSeg-debris)
 and uses its `CLIPDensePredT` and inference recipe.
 """
 
+# --- Compatibility shim for the regular DesignSafe Jupyter session ----------- #
+# Its Docker container starts the kernel under a numeric UID that is NOT listed
+# in /etc/passwd. Recent PyTorch (>=2.6) runs `getpass.getuser()` at the module
+# load time of `torch._dynamo` (to pick a default Inductor cache dir), and that
+# call falls through to `pwd.getpwuid(os.getuid())` → `KeyError: getpwuid()`,
+# which aborts `import torch._dynamo` and therefore `import torchvision`.
+# `getpass.getuser()` consults LOGNAME/USER/LNAME/USERNAME *before* the pwd
+# database, so seeding `USER` here makes the lookup short-circuit and never hit
+# `pwd`. No-op on systems where USER is already set (Vista, regular shells).
+import os
+os.environ.setdefault("USER", "jupyter")
+
 __all__ = ["debris_common", "clipseg_official", "regional", "finetune_data",
            "dapi_helpers", "viz"]
 __version__ = "2.1.0"
