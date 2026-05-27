@@ -116,6 +116,95 @@ _OFFICIAL_RUNTIME_DEPS = (
 )
 
 
+# --------------------------------------------------------------------------- #
+# CLIP backbone cache.
+# Some Jupyter containers (e.g. the regular DesignSafe JupyterHub) ship with a
+# read-only ``~/.cache/`` mount point, so OpenAI ``clip``'s default cache root
+# (``~/.cache/clip``) raises ``PermissionError`` the first time the ViT-B/16
+# backbone is downloaded. The helpers below find a writable directory and wrap
+# ``clip.load`` so the model's own internal ``clip.load(...)`` call uses it.
+# No-op on Vista and on any normal shell (the default cache path is writable).
+# --------------------------------------------------------------------------- #
+
+def _find_writable_clip_cache() -> Path:
+    """Return a directory CLIP can use to cache its backbone — the first writable
+    option among ``~/.cache/clip``, ``~/MyData/.cache/clip``, ``/tmp/clip_cache``."""
+    import tempfile
+    candidates = [
+        Path.home() / ".cache" / "clip",
+        Path.home() / "MyData" / ".cache" / "clip",
+        Path(tempfile.gettempdir()) / "clip_cache",
+    ]
+    for c in candidates:
+        try:
+            c.mkdir(parents=True, exist_ok=True)
+            probe = c / ".w"
+            probe.write_text("x"); probe.unlink()
+            return c
+        except (PermissionError, OSError):
+            continue
+    raise RuntimeError("no writable CLIP cache directory available")
+
+
+def _patch_clip_cache(verbose: bool = False) -> Optional[Path]:
+    """Wrap ``clip.load`` so calls without an explicit ``download_root`` use a
+    writable cache. Idempotent. Returns the chosen cache directory, or ``None``
+    if ``clip`` isn't importable yet (e.g. before ``install_requirements``)."""
+    try:
+        import clip
+    except ImportError:
+        return None
+    if getattr(clip.load, "_clip_cache_patched", False):
+        return Path(clip.load._clip_cache_dir)
+    cache_dir = _find_writable_clip_cache()
+    _orig = clip.load
+
+    def _wrapped(name, device="cpu", jit=False, download_root=None):
+        return _orig(name, device=device, jit=jit,
+                     download_root=download_root or str(cache_dir))
+
+    _wrapped._clip_cache_patched = True
+    _wrapped._clip_cache_dir = str(cache_dir)
+    clip.load = _wrapped
+    if verbose:
+        print(f"[clipseg] clip cache -> {cache_dir}")
+    return cache_dir
+
+
+def _patch_torch_load_weights_only(verbose: bool = False) -> bool:
+    """Make ``torch.load`` default to ``weights_only=False`` when the caller
+    hasn't explicitly set it.
+
+    PyTorch 2.6 flipped the default of ``weights_only`` from ``False`` to
+    ``True`` for safety. The official CLIPSeg-debris Lightning ``.ckpt``
+    contains ``functools.partial`` (and other non-tensor objects) that the
+    safe unpickler refuses to load, so Lightning's
+    ``trainer.predict(ckpt_path=...)`` (called from ``src.eval.evaluate``)
+    aborts with ``UnpicklingError: Weights only load failed``. This restores
+    the pre-2.6 behavior for the published checkpoint, which we trust.
+    Idempotent. No-op if torch isn't importable yet."""
+    try:
+        import torch
+    except ImportError:
+        return False
+    if getattr(torch.load, "_weights_only_patched", False):
+        return True
+    _orig = torch.load
+
+    def _wrapped(f, *args, **kwargs):
+        # Treat "not passed" and "explicit None" the same — Lightning passes
+        # weights_only=None up the chain, which torch 2.6 still resolves to True.
+        if kwargs.get("weights_only") is None:
+            kwargs["weights_only"] = False
+        return _orig(f, *args, **kwargs)
+
+    _wrapped._weights_only_patched = True
+    torch.load = _wrapped
+    if verbose:
+        print("[clipseg] torch.load defaults to weights_only=False (PyTorch 2.6+ compat)")
+    return True
+
+
 def install_requirements(repo_root: Union[str, Path], extra: Sequence[str] = (),
                          use_repo_requirements: bool = False, verbose: bool = True) -> None:
     """Install the official model's runtime dependencies (Hydra, Lightning,
@@ -155,6 +244,14 @@ def install_requirements(repo_root: Union[str, Path], extra: Sequence[str] = (),
     if us not in sys.path:
         sys.path.append(us)
     importlib.invalidate_caches()
+
+    # OpenAI CLIP defaults to ~/.cache/clip, which is read-only on some DesignSafe
+    # JupyterHub containers — pick a writable spot and wrap clip.load (no-op on Vista).
+    _patch_clip_cache(verbose=verbose)
+    # PyTorch 2.6 made torch.load default to weights_only=True, which rejects the
+    # official Lightning .ckpt (contains functools.partial). Restore the pre-2.6
+    # behavior for the trusted published checkpoint.
+    _patch_torch_load_weights_only(verbose=verbose)
 
 
 # --------------------------------------------------------------------------- #
@@ -220,7 +317,9 @@ def load_model(repo_root: Union[str, Path], checkpoint_path: Union[str, Path],
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
 
-    CLIPDensePredT = import_model_class(repo_root)  # official model, no Lightning needed
+    _patch_clip_cache()                              # ensure clip.load uses a writable cache
+    _patch_torch_load_weights_only()                 # ensure torch.load can load the Lightning .ckpt
+    CLIPDensePredT = import_model_class(repo_root)   # official model, no Lightning needed
 
     checkpoint_path = Path(checkpoint_path)
     if device is None:
