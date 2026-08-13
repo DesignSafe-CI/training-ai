@@ -148,6 +148,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   200,000 epochs. The original JAX version remains at
   [DesignSafe-Training/deeponet](https://github.com/DesignSafe-Training/deeponet).
 
+### Removed
+
+- `.github/workflows/deploy.yml` (the `deploy-docs` workflow). It built with
+  `npx myst build --html`, but this repository is a Jupyter Book (`_config.yml` +
+  `_toc.yml`) and carries no `myst.yml`, so the build wrote nothing and
+  `upload-pages-artifact` died on `tar: _build/html: Cannot open`. Because it
+  shared the repo-wide `concurrency: pages` group with `deploy-book`, every push
+  to `main` started two runs that then cancelled or raced each other. Deploys now
+  come only from `publish.yml`, which archives `./out/_build/html` and hands it to
+  `actions/deploy-pages` — artifact-based, so no `gh-pages` branch is written.
+
 ### Notes
 
 Every solution notebook was executed end to end before commit, and the committed
