@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# Requirements for the 2026 SPARC Session 3b scientific-ML modules (2-5).
+#
+# On DesignSafe JupyterHub most of these are preinstalled; each notebook opens
+# with a `%pip install` cell for anything missing. For a local run:
+#     pip install -r requirements-sciml.txt
+#
+# All four modules are CPU-only. No GPU, no TACC allocation.
+# (Module 1 needs `dapi` instead -- see requirements-notebook.txt.)
+# ---------------------------------------------------------------------------
+
+# --- Modules 2, 4, 5: neural networks and autodiff ---
+torch>=2.0
+
+# --- Modules 2, 3: classical ML baselines and metrics ---
+scikit-learn>=1.3
+
+# --- Module 3: gradient boosting and attribution ---
+xgboost>=2.0
+shap>=0.44
+
+# --- Module 5: reads cantilever_beam_deflection.mat ---
+scipy>=1.10
+
+# --- Shared: data handling and plots ---
+numpy
+pandas
+matplotlib

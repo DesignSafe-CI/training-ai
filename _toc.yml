@@ -1,7 +1,42 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+#
+# The three parts mirror the session's arc: fit a model to data, then build the
+# physics in, then go and run a real one at scale.
 
 format: jb-book
 root: README
-chapters:
-  - file: CLIPSeg_debris_DesignSafe_NHERI2026
+parts:
+  - caption: "Data-driven surrogates"
+    chapters:
+      - file: 01-opensees-ml/01-opensees-ml-regression
+        title: "1. Regression on HPC"
+        sections:
+          - file: 01-opensees-ml/01-opensees-ml-workflow-dag
+            title: "Variant: as a DAG workflow (optional)"
+      - file: 02-mlp/02-mlp-cantilever
+        title: "2. Multi-Layer Perceptrons"
+        sections:
+          - file: 02-mlp/02-mlp-cantilever-exercise
+            title: "Exercise"
+      - file: 03-xai/03-xai-lateral-spreading
+        title: "3. Explainable AI"
+        sections:
+          - file: 03-xai/03-xai-lateral-spreading-exercise
+            title: "Exercise"
+  - caption: "Physics-driven models"
+    chapters:
+      - file: 04-pinn/04-pinn-cantilever
+        title: "4. Physics-Informed Neural Networks"
+        sections:
+          - file: 04-pinn/04-pinn-cantilever-exercise
+            title: "Exercise"
+      - file: 05-operator-learning/05-deeponet-cantilever
+        title: "5. Operator Learning with DeepONet"
+        sections:
+          - file: 05-operator-learning/05-deeponet-cantilever-exercise
+            title: "Exercise"
+  - caption: "Applied at scale"
+    chapters:
+      - file: 06-clipseg/06-clipseg-debris
+        title: "6. Computer Vision at Scale"

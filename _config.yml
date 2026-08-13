@@ -7,8 +7,32 @@ copyright: "2026"
 
 # Render the notebooks' SAVED outputs — do not re-execute on build (the demo needs a
 # DesignSafe session, DAPI, and a GPU, which the CI runner doesn't have).
+# The Session 3b notebooks are committed already-executed, so their
+# figures and printed results come from a real run.
 execute:
   execute_notebooks: "off"
+
+# The per-module README.md files are GitHub-facing documentation, not book
+# chapters; without this they raise "document isn't included in any toctree".
+exclude_patterns:
+  - 01-opensees-ml/README.md
+  - 02-mlp/README.md
+  - 03-xai/README.md
+  - 04-pinn/README.md
+  - 05-operator-learning/README.md
+  - 06-clipseg/README.md
+  - 06-clipseg/utils/README.md
+  - 06-clipseg/weights/README.md
+  - CHANGELOG.md
+  - PREVIEW.md
+  - LICENSE.md
+  - _build
+
+sphinx:
+  config:
+    # Generate GitHub-style anchors for headings so the section links in
+    # README.md resolve both on GitHub and in the built book.
+    myst_heading_anchors: 3
 
 launch_buttons:
   notebook_interface: "jupyterlab"
