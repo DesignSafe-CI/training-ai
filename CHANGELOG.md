@@ -158,6 +158,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   to `main` started two runs that then cancelled or raced each other. Deploys now
   come only from `publish.yml`, which archives `./out/_build/html` and hands it to
   `actions/deploy-pages` — artifact-based, so no `gh-pages` branch is written.
+- The **`gh-pages` branch** (last written 22 May 2026, SHA `bddf583`), which held a
+  stale Sphinx build of the initial commit. Nothing had served from it since Pages
+  moved to `build_type: workflow`; the site kept returning HTTP 200 after the
+  delete. `main` is now the only branch on the remote.
 
 ### Notes
 
