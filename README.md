@@ -97,10 +97,6 @@ gracefully rather than failing.
 Clones — or fast-forwards — this repo into `~/MyData/training-ai/`. Re-click any
 time to pull the latest version.
 
-### On Colab
-
-Every notebook carries a Colab badge in its first cell.
-
 ---
 
 ## The modules
