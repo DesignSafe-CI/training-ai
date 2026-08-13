@@ -11,13 +11,6 @@ Hands-on **AI training** — running modern AI workflows on
 
 ## Scientific Machine Learning for Engineers
 
-**Six modules. Five of them are the same cantilever beam.**
-
-Modules 1–5 are built around a single structure so that each answers a question the
-previous one *cannot*. The beam from Module 1's OpenSees sweep is the same beam
-whose deflection field Module 5 learns an operator for. Module 6 then leaves the
-beam behind for real post-hurricane imagery and a pre-trained foundation model.
-
 | # | Module | The network learns | Maps | Cost of a new query |
 | --- | --- | --- | --- | --- |
 | 1 | [Regression](#module-1--regression-on-hpc) | 3 coefficients | $\mathbb{R}^3 \to \mathbb{R}$ | instant |
