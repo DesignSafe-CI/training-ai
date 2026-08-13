@@ -28,6 +28,24 @@ exclude_patterns:
   - LICENSE.md
   - _build
 
+# The notebooks embed figures with HTML <img src="figs/..."> tags, because that
+# form renders natively on GitHub and in JupyterLab. Sphinx would otherwise pass
+# those tags through verbatim and never copy the files into the build, so every
+# figure 404s on the published site. `html_image` parses them into real Sphinx
+# image nodes, which copies the file and rewrites the src.
+# NOTE: setting this list replaces Jupyter Book's defaults, so the defaults we
+# rely on (dollarmath for $...$ maths, colon_fence, etc.) must be listed too.
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_image
+    - linkify
+    - substitution
+    - tasklist
+
 sphinx:
   config:
     # Generate GitHub-style anchors for headings so the section links in
