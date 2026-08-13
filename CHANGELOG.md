@@ -139,7 +139,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   with no run-time network dependency.
 - `README.md` rewritten as the landing page: the six-module table, a
   three-hour agenda, and a DesignSafe/Colab link table pointing at
-  `CommunityData/Training/training-ai/`. The CLIPSeg-debris material
+  `CommunityData/Training/2026-SPARC/Day3/3b-SciML/` (PRJ-1305). The CLIPSeg-debris material
   is retained as its own section.
 - `_toc.yml` restructured into two parts — the the modules (with exercise
   notebooks as sub-sections) and the CLIPSeg-debris chapter.
