@@ -1,8 +1,8 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-# The three parts mirror the session's arc: fit a model to data, then build the
-# physics in, then go and run a real one at scale.
+# The three parts mirror the arc: fit a model to data, then build the physics in,
+# then run a real one at scale.
 
 format: jb-book
 root: README
@@ -19,13 +19,8 @@ parts:
         sections:
           - file: 02-mlp/02b-automatic-differentiation
             title: "Automatic differentiation and gradient descent"
-          - file: 02-mlp/02-mlp-cantilever-exercise
-            title: "Exercise"
       - file: 03-xai/03-xai-lateral-spreading
         title: "3. Explainable AI"
-        sections:
-          - file: 03-xai/03-xai-lateral-spreading-exercise
-            title: "Exercise"
   - caption: "Physics-driven models"
     chapters:
       - file: 04-pinn/04a-pinn-oscillator
@@ -33,17 +28,13 @@ parts:
         sections:
           - file: 04-pinn/04b-pinn-poisson
             title: "B. The 1D Poisson equation"
-          - file: 04-pinn/04c-pinn-cantilever-exercise
-            title: "C. Cantilever beam (exercise)"
-          - file: 04-pinn/04c-pinn-cantilever-solution
-            title: "C. Cantilever beam (solution)"
+          - file: 04-pinn/04c-pinn-cantilever
+            title: "C. The cantilever beam"
       - file: 05-operator-learning/05a-deeponet-darcy
         title: "5. Operator Learning with DeepONet"
         sections:
-          - file: 05-operator-learning/05b-deeponet-cantilever-exercise
-            title: "B. Cantilever operator (exercise)"
-          - file: 05-operator-learning/05b-deeponet-cantilever-solution
-            title: "B. Cantilever operator (solution)"
+          - file: 05-operator-learning/05b-deeponet-cantilever
+            title: "B. The cantilever operator"
   - caption: "Applied at scale"
     chapters:
       - file: 06-clipseg/06-clipseg-debris

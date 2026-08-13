@@ -1,6 +1,6 @@
 # Module 2 — Multi-Layer Perceptrons
 
-**2026 SPARC · Day 3, Session 3b · CPU only**
+**CPU only**
 
 Module 1 recovered `T = 2π√(ML³/3EI)` exactly with a linear regression — because
 we knew to take logarithms first. This module asks what to do when you don't.

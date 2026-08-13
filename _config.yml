@@ -1,13 +1,13 @@
 # Book settings — https://jupyterbook.org/customize/config.html
 
-title: NHERI Computational Symposium AI Training
+title: DesignSafe AI Training
 author: Krishna Kumar, Kooshan Amini, and Jamie Ellen Padgett
 logo: logo.png
 copyright: "2026"
 
 # Render the notebooks' SAVED outputs — do not re-execute on build (the demo needs a
 # DesignSafe session, DAPI, and a GPU, which the CI runner doesn't have).
-# The Session 3b notebooks are committed already-executed, so their
+# The this training notebooks are committed already-executed, so their
 # figures and printed results come from a real run.
 execute:
   execute_notebooks: "off"

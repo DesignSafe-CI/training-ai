@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- **2026 SPARC Day 3, Session 3b: four new scientific-ML modules**, threaded
+- **Four new scientific-ML modules**, threaded
   through a single cantilever beam so each answers a question the previous one
   cannot. All CPU-only; no allocation or GPU required.
 
@@ -43,7 +43,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   and 6 ship a single notebook each — Module 1 submits a real HPC job, and blanking
   Module 6's production pipeline would just break it, so its exercises are inline
   (see below).
-- `06-clipseg/` **is now Module 6** of the session rather than a standalone chapter.
+- `06-clipseg/` **is now Module 6** rather than a standalone chapter.
   Its notebook, `utils/`, `designsafe_job/`, `weights/`, and requirements moved into
   the module folder. Because the notebook resolves
   `REPO_ROOT = NB_DIR if (NB_DIR/"utils").exists() else NB_DIR.parent`, the move
@@ -105,7 +105,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
   Output-file prefixes (`opensees_ml_model.json`, `opensees_ml_report.txt`) are
   unchanged — they are artefact names produced by the HPC job, not paths.
-- `_toc.yml` reorganised into three parts that mirror the session's arc —
+- `_toc.yml` reorganised into three parts that mirror the arc —
   *Data-driven surrogates* (1–3), *Physics-driven models* (4–5), *Applied at
   scale* (6) — with exercise notebooks as sub-sections.
 - `01-opensees-ml-workflow-dag.ipynb` is now **published** as an optional
@@ -127,7 +127,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   alongside Parts 1–4, so "Part 1" lived under heading "4.". The section numbers
   were dropped so the Parts carry the numbering, and the `0a.`/`7c.`-style
   sub-numbering went with them.
-- Module 6 gained the Session 3b module header, DesignSafe/Colab badges, a
+- Module 6 gained the this training module header, DesignSafe/Colab badges, a
   **"what runs where"** table (which parts need a GPU, which need an allocation,
   which run in-session), and a *Where we are* section contrasting it with Modules
   1–5. Authorship (Kooshan Amini, Jamie E. Padgett) is stated up front.
@@ -137,11 +137,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `05-operator-learning/cantilever_beam_deflection.mat` (20 MB) is now **committed**,
   so a clone or the one-click DesignSafe git-pull yields a fully working Module 5
   with no run-time network dependency.
-- `README.md` rewritten as the Session 3b landing page: the six-module table, a
+- `README.md` rewritten as the landing page: the six-module table, a
   three-hour agenda, and a DesignSafe/Colab link table pointing at
-  `CommunityData/Training/2026-SPARC/Day3/Session3b/`. The CLIPSeg-debris material
+  `CommunityData/Training/training-ai/`. The CLIPSeg-debris material
   is retained as its own section.
-- `_toc.yml` restructured into two parts — the Session 3b modules (with exercise
+- `_toc.yml` restructured into two parts — the the modules (with exercise
   notebooks as sub-sections) and the CLIPSeg-debris chapter.
 - Module 5 ported from JAX/Flax to PyTorch so Modules 2, 4, and 5 share one
   framework, and so it trains in under a minute on CPU instead of requiring

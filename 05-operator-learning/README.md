@@ -1,6 +1,6 @@
 # Module 5 — Operator Learning with DeepONet
 
-**2026 SPARC · Day 3, Session 3b · CPU only**
+**CPU only**
 
 > Cantilever DeepONet example after **Somdatta Goswami** (Johns Hopkins).
 
@@ -154,7 +154,7 @@ with no network dependency at run time.
 
 The notebook's `find_mat()` still searches in order, so it works from any of them:
 
-1. `CommunityData/Training/2026-SPARC/Day3/Session3b/`
+1. `CommunityData/Training/training-ai/`
 2. the notebook's own folder ← the committed copy
 3. `../training-deeponet/`
 4. a GitHub download (one time, last resort)

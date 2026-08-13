@@ -1,6 +1,6 @@
 # Module 6 — Computer Vision at Scale: CLIPSeg-debris
 
-**2026 SPARC · Day 3, Session 3b walkthrough · Parts 3–4 need a TACC allocation**
+**Walkthrough · Parts 3–4 need a TACC allocation**
 
 > **Authors:** Kooshan Amini and Jamie E. Padgett (Rice University), Padgett
 > Research Group. Model: [CLIPSeg-debris](https://github.com/Way-Yuhao/CLIPSeg-debris)
