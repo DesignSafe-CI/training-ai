@@ -74,14 +74,14 @@ code.
 Notebooks are published to
 `CommunityData/Training/2026-SPARC/Day3/3b-SciML/`.
 
-| Module | Exercise | Solution |
-| --- | --- | --- |
-| 1. Regression | — | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/01-opensees-ml-regression.ipynb) |
-| 2. MLP | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/02-mlp-cantilever-exercise.ipynb) | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/02-mlp-cantilever.ipynb) |
-| 3. XAI | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/03-xai-lateral-spreading-exercise.ipynb) | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/03-xai-lateral-spreading.ipynb) |
-| 4. PINN | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/04-pinn-cantilever-exercise.ipynb) | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/04-pinn-cantilever.ipynb) |
-| 5. DeepONet | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/05-deeponet-cantilever-exercise.ipynb) | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/05-deeponet-cantilever.ipynb) |
-| 6. CLIPSeg | *(exercises are inline)* | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/06-clipseg-debris.ipynb) |
+| Module | Notebook |
+| --- | --- |
+| 1. Regression | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/01-opensees-ml-regression.ipynb) |
+| 2. MLP | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/02-mlp-cantilever.ipynb) |
+| 3. XAI | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/03-xai-lateral-spreading.ipynb) |
+| 4. PINN | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/04-pinn-cantilever.ipynb) |
+| 5. DeepONet | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/05-deeponet-cantilever.ipynb) |
+| 6. CLIPSeg | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/06-clipseg-debris.ipynb) |
 
 Data files to place in the same Community Data folder:
 `cantilever_sweep.csv` (Module 2), `RF_YN_Model3.csv` (Module 3),

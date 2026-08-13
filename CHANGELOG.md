@@ -150,6 +150,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Removed
 
+- The **Exercise column** from the README's DesignSafe link table, which now
+  carries one **Notebook** link per module instead of an exercise/solution pair.
+  The `*-exercise.ipynb` notebooks are unchanged in the repo and still listed in
+  `_toc.yml`; only the README links are gone.
 - `.github/workflows/deploy.yml` (the `deploy-docs` workflow). It built with
   `npx myst build --html`, but this repository is a Jupyter Book (`_config.yml` +
   `_toc.yml`) and carries no `myst.yml`, so the build wrote nothing and
