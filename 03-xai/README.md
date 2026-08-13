@@ -1,6 +1,6 @@
 # Module 3 — Explainable AI
 
-**2026 SPARC · Day 3, Session 3b · ~25 min · CPU only**
+**2026 SPARC · Day 3, Session 3b · CPU only**
 
 Module 2 traded three interpretable exponents (`0.5`, `1.5`, `-0.5` — the physics)
 for a few thousand opaque weights. On a cantilever we could check the answer

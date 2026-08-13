@@ -1,6 +1,6 @@
 # Module 5 — Operator Learning with DeepONet
 
-**2026 SPARC · Day 3, Session 3b · ~30 min · CPU only**
+**2026 SPARC · Day 3, Session 3b · CPU only**
 
 > Cantilever DeepONet example after **Somdatta Goswami** (Johns Hopkins).
 

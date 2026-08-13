@@ -1,6 +1,6 @@
 # Module 6 — Computer Vision at Scale: CLIPSeg-debris
 
-**2026 SPARC · Day 3, Session 3b · ~20 min walkthrough · Parts 3–4 need a TACC allocation**
+**2026 SPARC · Day 3, Session 3b walkthrough · Parts 3–4 need a TACC allocation**
 
 > **Authors:** Kooshan Amini and Jamie E. Padgett (Rice University), Padgett
 > Research Group. Model: [CLIPSeg-debris](https://github.com/Way-Yuhao/CLIPSeg-debris)
@@ -32,9 +32,9 @@ Half the notebook needs an allocation. Know which half before you start.
 
 | Part | What it does | Needs | In-session? |
 | --- | --- | --- | --- |
-| Setup | environment, paths, DAPI login, model, weights | DesignSafe login | yes, ~3 min |
+| Setup | environment, paths, DAPI login, model, weights | DesignSafe login | yes |
 | **1** | official `evaluate()` on the published dataset | GPU session recommended | yes |
-| **2** | regional debris map — Estero Island FL, Hurricane Ian (2022) | GPU session recommended | yes, ~5 min |
+| **2** | regional debris map — Estero Island FL, Hurricane Ian (2022) | GPU session recommended | yes |
 | **3** | scale the same inference out as an HPC GPU job | **TACC allocation** | submit only |
 | **4** | fine-tune on Vista (GH200) | **TACC allocation** | submit only |
 

@@ -17,6 +17,8 @@ parts:
       - file: 02-mlp/02-mlp-cantilever
         title: "2. Multi-Layer Perceptrons"
         sections:
+          - file: 02-mlp/02b-automatic-differentiation
+            title: "Automatic differentiation and gradient descent"
           - file: 02-mlp/02-mlp-cantilever-exercise
             title: "Exercise"
       - file: 03-xai/03-xai-lateral-spreading
@@ -26,16 +28,22 @@ parts:
             title: "Exercise"
   - caption: "Physics-driven models"
     chapters:
-      - file: 04-pinn/04-pinn-cantilever
+      - file: 04-pinn/04a-pinn-oscillator
         title: "4. Physics-Informed Neural Networks"
         sections:
-          - file: 04-pinn/04-pinn-cantilever-exercise
-            title: "Exercise"
-      - file: 05-operator-learning/05-deeponet-cantilever
+          - file: 04-pinn/04b-pinn-poisson
+            title: "B. The 1D Poisson equation"
+          - file: 04-pinn/04c-pinn-cantilever-exercise
+            title: "C. Cantilever beam (exercise)"
+          - file: 04-pinn/04c-pinn-cantilever-solution
+            title: "C. Cantilever beam (solution)"
+      - file: 05-operator-learning/05a-deeponet-darcy
         title: "5. Operator Learning with DeepONet"
         sections:
-          - file: 05-operator-learning/05-deeponet-cantilever-exercise
-            title: "Exercise"
+          - file: 05-operator-learning/05b-deeponet-cantilever-exercise
+            title: "B. Cantilever operator (exercise)"
+          - file: 05-operator-learning/05b-deeponet-cantilever-solution
+            title: "B. Cantilever operator (solution)"
   - caption: "Applied at scale"
     chapters:
       - file: 06-clipseg/06-clipseg-debris

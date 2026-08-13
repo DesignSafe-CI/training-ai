@@ -1,6 +1,6 @@
 # Module 1 — Regression on HPC
 
-**2026 SPARC · Day 3, Session 3b · ~35 min · needs a TACC allocation**
+**2026 SPARC · Day 3, Session 3b · needs a TACC allocation**
 
 A simple end-to-end ML workflow on DesignSafe using `dapi` and the
 general-purpose `python-s3` app. Sweeps a 2D cantilever pushover in OpenSeesPy

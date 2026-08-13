@@ -33,33 +33,23 @@ into the model so it cannot learn something the physics forbids. Module 6 leaves
 the beam behind for real imagery and a pre-trained foundation model — the applied
 counterpart to everything before it.
 
-### Agenda
+### Running order
 
-| Time | Module | Min | Notes |
-| --- | --- | --- | --- |
-| 0:00 | Framing — the six questions | 8 | |
-| 0:08 | **1. Regression** on Stampede3 | 27 | **Submit the HPC job now**, harvest at 2:55 |
-| 0:35 | **2. MLP** | 35 | the long pole — trim here first if late |
-| 1:10 | **3. XAI** | 22 | |
-| 1:32 | *break* | 10 | falls on the data-driven → physics-driven boundary |
-| 1:42 | **4. PINNs** | 32 | second longest |
-| 2:14 | **5. Operator learning** | 26 | |
-| 2:40 | **6. CLIPSeg** | 15 | walkthrough, not hands-on — see below |
-| 2:55 | Job results + wrap-up | 5 | |
+| Module | Notes |
+| --- | --- |
+| Framing — the six questions | |
+| **1. Regression** on Stampede3 | **Submit the HPC job first**, harvest at the end |
+| **2. MLP** | |
+| **3. XAI** | |
+| *break* | falls on the data-driven → physics-driven boundary |
+| **4. PINNs** | |
+| **5. Operator learning** | |
+| **6. CLIPSeg** | walkthrough, not hands-on — see below |
+| Job results + wrap-up | |
 
-**Being honest about the budget.** Six substantive modules do not fit three hours
-as six hands-on modules. Two deliberate compromises make it work:
-
-- **Module 6 is a guided walkthrough.** Its Parts 3–4 need a TACC allocation, and
-  every cell ships saved output from a completed run, so it reads well without
-  being run. Attendees run it themselves afterwards.
-- **Cells marked `⏱ optional`** in Modules 2–5 are skippable live and readable
-  later. Each module works without them.
-
-Module 1 goes first because it submits to a TACC queue; its results are collected
-at the end, so the queue wait hides behind Modules 2–6. Its notebook ships the
-saved outputs of a verified Stampede3 run (job `b1d13ae7…`, 75 tasks in 42 s), so
-a slow queue day costs you the live reveal but not the material.
+Module 1 submits to a TACC queue, so it goes first and its results are collected
+at the end. Sections marked `optional` in Modules 2–5 can be skipped and read
+later.
 
 ### Requirements
 
@@ -102,9 +92,9 @@ gracefully rather than failing.
 
 ### Clone the whole repo into DesignSafe (one click)
 
-[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetpath=MyData%2Ftraining-ai&urlpath=lab%2Ftree%2FMyData%2Ftraining-ai%2FREADME.md)
+[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetpath=MyData%2Fdesignsafe%2Ftraining-ai&urlpath=lab%2Ftree%2FMyData%2Fdesignsafe%2Ftraining-ai%2FREADME.md)
 
-Clones — or fast-forwards — this repo into `~/MyData/training-ai/`. Re-click any
+Clones — or fast-forwards — this repo into `~/MyData/designsafe/training-ai/`. Re-click any
 time to pull the latest version.
 
 ### On Colab

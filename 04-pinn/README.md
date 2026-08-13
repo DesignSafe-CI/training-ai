@@ -1,6 +1,6 @@
 # Module 4 — Physics-Informed Neural Networks
 
-**2026 SPARC · Day 3, Session 3b · ~35 min · CPU only**
+**2026 SPARC · Day 3, Session 3b · CPU only**
 
 Module 2 ended with a network fitted to eight deflection readings. It passed
 through all eight and was still wrong — nonzero slope at the clamped support,
