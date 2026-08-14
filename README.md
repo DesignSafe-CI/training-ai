@@ -18,38 +18,22 @@ Re-click any time to pull the latest version.
 
 ## Scientific Machine Learning for Engineers
 
-| # | Module | The network learns | Maps | Cost of a new query |
-| --- | --- | --- | --- | --- |
-| 1 | [Regression](#module-1--regression-on-hpc) | 3 coefficients | $\mathbb{R}^3 \to \mathbb{R}$ | instant |
-| 2 | [MLP](#module-2--multi-layer-perceptrons) | a nonlinear surrogate | $\mathbb{R}^3 \to \mathbb{R}$ | instant |
-| 3 | [XAI](#module-3--explainable-ai) | *why* the model said that | — | instant |
-| 4 | [PINN](#module-4--physics-informed-neural-networks) | one solution field | $x \mapsto w(x)$ | **retrain** |
-| 5 | [DeepONet](#module-5--operator-learning) | the solution **operator** | $q(\cdot) \mapsto w(\cdot)$ | instant |
-| 6 | [CLIPSeg](#module-6--computer-vision-at-scale) | someone else's foundation model | image $\mapsto$ debris map | instant |
+| # | Module | The network learns | Maps | Cost of a new query | Notebook |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [Regression](#module-1--regression-on-hpc) | 3 coefficients | $\mathbb{R}^3 \to \mathbb{R}$ | instant | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/01-opensees-ml-regression.ipynb) |
+| 2 | [MLP](#module-2--multi-layer-perceptrons) | a nonlinear surrogate | $\mathbb{R}^3 \to \mathbb{R}$ | instant | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/02-mlp-cantilever.ipynb) | 
+| 3 | [XAI](#module-3--explainable-ai) | *why* the model said that | — | instant | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/03-xai-lateral-spreading.ipynb) |
+| 4 | [PINN](#module-4--physics-informed-neural-networks) | one solution field | $x \mapsto w(x)$ | **retrain** |  [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/04-pinn-cantilever.ipynb) |
+| 5 | [DeepONet](#module-5--operator-learning) | the solution **operator** | $q(\cdot) \mapsto w(\cdot)$ | instant | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/05-deeponet-cantilever.ipynb) |
+| 6 | [CLIPSeg](#module-6--computer-vision-at-scale) | someone else's foundation model | image $\mapsto$ debris map | instant | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/06-clipseg-debris.ipynb) |
 
 Modules 1–3 are **data-driven**: fit a flexible model to simulation output, then
 interrogate it. Modules 4–5 are **physics-driven**: build the governing equation
 into the model so it cannot learn something the physics forbids. Module 6 leaves
 the beam behind for real imagery and a pre-trained foundation model — the applied
-counterpart to everything before it.
-
-### Running order
-
-| Module | Notes |
-| --- | --- |
-| Framing — the six questions | |
-| **1. Regression** on Stampede3 | **Submit the HPC job first**, harvest at the end |
-| **2. MLP** | |
-| **3. XAI** | |
-| *break* | falls on the data-driven → physics-driven boundary |
-| **4. PINNs** | |
-| **5. Operator learning** | |
-| **6. CLIPSeg** | walkthrough, not hands-on — see below |
-| Job results + wrap-up | |
-
-Module 1 submits to a TACC queue, so it goes first and its results are collected
-at the end. Sections marked `optional` in Modules 2–5 can be skipped and read
-later.
+counterpart to everything before it. 
+Notebooks are published to
+`CommunityData/Training/2026-SPARC/Day3/3b-SciML/`.
 
 ### Requirements
 
@@ -58,37 +42,6 @@ later.
 | **2–5** | CPU only. A few minutes each on DesignSafe JupyterHub or Colab. No allocation, no GPU. |
 | **1** | A TACC allocation (submits to Stampede3 via `dapi`). |
 | **6** | Parts 1–2: a DesignSafe session, GPU recommended. Parts 3–4: a TACC allocation. |
-
----
-
-## Open the notebooks
-
-Modules 2–5 each ship an **exercise** notebook (code blanked, `# TODO`) and a
-**solution** notebook. Modules 1 and 6 ship one notebook each — Module 1 submits a
-real HPC job, and Module 6 drives a production pipeline whose code would simply
-break if blanked, so its exercises are inline as variations to make on working
-code.
-
-### On DesignSafe (Community Data)
-
-Notebooks are published to
-`CommunityData/Training/2026-SPARC/Day3/3b-SciML/`.
-
-| Module | Notebook |
-| --- | --- |
-| 1. Regression | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/01-opensees-ml-regression.ipynb) |
-| 2. MLP | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/02-mlp-cantilever.ipynb) |
-| 3. XAI | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/03-xai-lateral-spreading.ipynb) |
-| 4. PINN | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/04-pinn-cantilever.ipynb) |
-| 5. DeepONet | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/05-deeponet-cantilever.ipynb) |
-| 6. CLIPSeg | [![Try on DesignSafe](DesignSafe-Badge.svg)](https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/Training/2026-SPARC/Day3/3b-SciML/06-clipseg-debris.ipynb) |
-
-Data files to place in the same Community Data folder:
-`cantilever_sweep.csv` (Module 2), `RF_YN_Model3.csv` (Module 3),
-`cantilever_beam_deflection.mat` (Module 5, 20 MB). All three are also committed
-to this repo, and every notebook searches Community Data first, then its own
-folder, then falls back to a GitHub download — so a partial upload degrades
-gracefully rather than failing.
 
 ---
 
@@ -279,5 +232,4 @@ Related DesignSafe training repos:
 - Krishna Kumar, University of Texas at Austin
 - Kooshan Amini, Rice University
 - Jamie Ellen Padgett, Rice University
-
-Module 5's cantilever DeepONet example is due to Somdatta Goswami (Johns Hopkins).
+- Somdatta Goswami, Johns Hopkins University
