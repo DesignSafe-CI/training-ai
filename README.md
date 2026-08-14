@@ -85,9 +85,9 @@ gracefully rather than failing.
 
 ### Clone the whole repo into DesignSafe (one click) 
 
-[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetPath=MyData%2Ftraining-ai&urlpath=lab%2Ftree%2FMyData%2Ftraining-ai%2FREADME.md)
+[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetPath=MyData%2Fds-training%2Fai&urlpath=lab%2Ftree%2FMyData%2Fds-training%2Fai%2FREADME.md)
 
-Clones — or fast-forwards — this repo into `MyData/training-ai/` and opens this README.
+Clones — or fast-forwards — this repo into `MyData/ds-training/ai/` and opens this README.
 Re-click any time to pull the latest version.
 
 ---
