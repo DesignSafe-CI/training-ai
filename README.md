@@ -7,6 +7,13 @@ Hands-on **AI training** — running modern AI workflows on
 **[DesignSafe](https://www.designsafe-ci.org/)** with the DesignSafe API
 ([`dapi`](https://designsafe-ci.github.io/dapi/)).
 
+### Clone the whole repo into DesignSafe (one click) 
+
+[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetPath=MyData%2Fds-training%2Fai&urlpath=lab%2Ftree%2FMyData%2Fds-training%2Fai%2FREADME.md)
+
+Clones — or fast-forwards — this repo into `MyData/ds-training/ai/` and opens this README.
+Re-click any time to pull the latest version.
+
 ---
 
 ## Scientific Machine Learning for Engineers
@@ -82,13 +89,6 @@ Data files to place in the same Community Data folder:
 to this repo, and every notebook searches Community Data first, then its own
 folder, then falls back to a GitHub download — so a partial upload degrades
 gracefully rather than failing.
-
-### Clone the whole repo into DesignSafe (one click) 
-
-[![Open in DesignSafe](https://img.shields.io/badge/Open%20in%20DesignSafe-clone%20%2B%20open-006FBA?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.designsafe-ci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FDesignSafe-CI%2Ftraining-ai&branch=main&targetPath=MyData%2Fds-training%2Fai&urlpath=lab%2Ftree%2FMyData%2Fds-training%2Fai%2FREADME.md)
-
-Clones — or fast-forwards — this repo into `MyData/ds-training/ai/` and opens this README.
-Re-click any time to pull the latest version.
 
 ---
 
