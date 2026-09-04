@@ -8,6 +8,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Google Analytics (GA4) on the published book via `html.analytics.google_analytics_id` in `_config.yml`, reporting into the DesignSafe property; book traffic separates by page path in GA4.
+
 - **Four new scientific-ML modules**, threaded
   through a single cantilever beam so each answers a question the previous one
   cannot. All CPU-only; no allocation or GPU required.

@@ -64,3 +64,6 @@ html:
   use_issues_button: true
   use_repository_button: true
   extra_navbar: ""
+  analytics:
+    # GA4, same DesignSafe property as designsafe-ci.org and the dapi docs.
+    google_analytics_id: G-D96RT1T24K
